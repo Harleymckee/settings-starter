@@ -116,6 +116,9 @@ class App extends Component {
               </ul>
             </nav>
           </div>
+          <div>
+            This is where content goes
+          </div>
           <div className='footer'>
             <div className='pull-right'>
               v <strong> 0.0.1 </strong>
