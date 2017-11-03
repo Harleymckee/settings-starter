@@ -3,11 +3,9 @@ import logo from './autofi-logo-retro-w-200.png';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
-import './animate.css'; 
-import './admin-style.css';
-import './App.css';
+import './styles/animate.css'; 
+import './styles/admin-style.css';
 
-// JSX transposed from adminLayout.pug
 class App extends Component {
   render() {
     return (
