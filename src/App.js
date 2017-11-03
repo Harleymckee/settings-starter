@@ -92,7 +92,25 @@ class App extends Component {
                   </span>
                 </li>
                 <li className='dropdown'>
-                  {/* TODO rest of head*/}
+                  <a className='dropdown-toggle count-info' data-toggle='dropdown' href='#'>
+                    <i className='fa fa-bell' />
+                  </a>
+                  <ul className='dropdown-menu dropdown-alerts'>
+                    <li className='text-center link-block'>
+                      <a href='#'>
+                        <strong>
+                          See All Alerts
+                        </strong>
+                        <i className='fa fa-angle-right' />
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href='/logout'>
+                    <i className='fa fa-sign-out' />
+                    Log Out
+                  </a>
                 </li>
               </ul>
             </nav>
