@@ -1,18 +1,110 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './autofi-logo-retro-w-200.png';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
+import '../node_modules/font-awesome/css/font-awesome.min.css'; 
+import './admin-style.css';
 import './App.css';
 
+// JSX transposed from adminLayout.pug
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div id="Wrapper">
+        <nav className='navbar-default navbar-static-side navbar-fixed-custom' role='navigation'>
+          <div className='sidebar-collapse'>
+            <ul id='side-menu' className='nav metismenu'>
+              <li className='nav-header'>
+                <div className='dropdown profile-element'>
+                  <div style={{padding: '10px'}}>
+                    <img src={logo} width='100'/>
+                  </div>
+                  <a className='dropdown-toggle' datatoggle='dropdown' href='#'>
+                    <span className='clear'>
+                      <span className='block m-t-xs'>
+                        <strong className='font-bold'>
+                          Autofi {/* dynamic on other site -- dealer specific */}
+                        </strong>
+                      </span>
+                      <span className='text-muted text-xs-block'>
+                        username full
+                        <b className='caret'/>
+                      </span>
+                    </span>
+                  </a>
+                  <ul className='dropdown-menu animated fadeInRight m-t-xs'>
+                    <li>
+                      <a href='/user'>
+                        Account
+                      </a>
+                    </li>
+                    <li className='divider' />
+                    <li>
+                      <a href='/logout'>
+                        Logout
+                      </a>
+                    </li>
+                  </ul>
+                  <div className='logo-element'>
+                    <img src='' /> {/* TODO */}
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a>
+                  <i className='fa fa-plus' />
+                  <span className='nav-label'>
+                    Tab One
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <i className='fa fa-plus' />
+                  <span className='nav-label'>
+                    Tab Two
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <i className='fa fa-plus' />
+                  <span className='nav-label'>
+                    Tab Three
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div id='page-wrapper' className='gray-bg dashbard-1'>
+          <div className='row border-bottom'>
+            <nav className='navbar navbar-static-top' role='navigation' style={{marginBottom: 0}}>
+              <div className='navbar-header'>
+                <a className='navbar-minimalize minimalize-styl-2 btn btn-primary' href='#'>
+                  <i className='fa fa-bars fa-nomargin' />
+                </a>
+              </div>
+              <ul className='nav navbar-top-links navbar-right'>
+                <li>
+                  <span className='m-r-sm text-muted'>
+                  </span>
+                </li>
+                <li className='dropdown'>
+                  {/* TODO rest of head*/}
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className='footer'>
+            <div className='pull-right'>
+              v <strong> 0.0.1 </strong>
+            </div>
+            <div>
+              <strong>Copyright</strong> AutoFi, Inc. © 2017
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
