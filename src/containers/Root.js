@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import logo from './autofi-logo-retro-w-200.png';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
-import '../node_modules/font-awesome/css/font-awesome.min.css'; 
-import './styles/animate.css'; 
-import './styles/admin-style.css';
+import logo from '../autofi-logo-retro-w-200.png';
+import { Route, Link } from 'react-router-dom'
+import Home from './Home'
+import TabThree from './TabThree'
+import TabTwo from './TabTwo'
+import TabOne from './TabOne'
+
 
 class App extends Component {
   render() {
@@ -50,28 +51,28 @@ class App extends Component {
                 </div>
               </li>
               <li>
-                <a>
+								<Link to='/tabone'>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
-                    Tab One
+											Tab One
                   </span>
-                </a>
+								</Link>
               </li>
               <li>
-                <a>
+								<Link to='/tabtwo'>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
                     Tab Two
                   </span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a>
+								<Link to='/tabthree'>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
                     Tab Three
                   </span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -115,7 +116,10 @@ class App extends Component {
             </nav>
           </div>
           <div>
-            This is where content goes
+						<Route path="/" component={Home} />
+						<Route path="/tabone" component={TabOne} />
+						<Route path="/tabtwo" component={TabTwo} />
+						<Route path="/tabthree" component={TabThree} />
           </div>
           <div className='footer'>
             <div className='pull-right'>
