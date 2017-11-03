@@ -89,6 +89,7 @@ class App extends Component {
               <ul className='nav navbar-top-links navbar-right'>
                 <li>
                   <span className='m-r-sm text-muted'>
+                    Autofi
                   </span>
                 </li>
                 <li className='dropdown'>
