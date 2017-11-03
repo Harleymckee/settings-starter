@@ -3,6 +3,7 @@ import logo from './autofi-logo-retro-w-200.png';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
+import './animate.css'; 
 import './admin-style.css';
 import './App.css';
 
@@ -19,7 +20,7 @@ class App extends Component {
                   <div style={{padding: '10px'}}>
                     <img src={logo} width='100'/>
                   </div>
-                  <a className='dropdown-toggle' datatoggle='dropdown' href='#'>
+                  <a className='dropdown-toggle' data-toggle='dropdown' href='#'>
                     <span className='clear'>
                       <span className='block m-t-xs'>
                         <strong className='font-bold'>
@@ -88,13 +89,35 @@ class App extends Component {
               <ul className='nav navbar-top-links navbar-right'>
                 <li>
                   <span className='m-r-sm text-muted'>
+                    Autofi
                   </span>
                 </li>
                 <li className='dropdown'>
-                  {/* TODO rest of head*/}
+                  <a className='dropdown-toggle count-info' data-toggle='dropdown' href='#'>
+                    <i className='fa fa-bell' />
+                  </a>
+                  <ul className='dropdown-menu dropdown-alerts'>
+                    <li className='text-center link-block'>
+                      <a href='#'>
+                        <strong>
+                          See All Alerts
+                        </strong>
+                        <i className='fa fa-angle-right' />
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href='/logout'>
+                    <i className='fa fa-sign-out' />
+                    Log Out
+                  </a>
                 </li>
               </ul>
             </nav>
+          </div>
+          <div>
+            This is where content goes
           </div>
           <div className='footer'>
             <div className='pull-right'>
