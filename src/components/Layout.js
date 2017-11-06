@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import logo from './autofi-logo-retro-w-200.png';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
-import '../node_modules/font-awesome/css/font-awesome.min.css'; 
-import './animate.css'; 
-import './admin-style.css';
-import './App.css';
+import logo from '../autofi-logo-retro-w-200.png';
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
 
-// JSX transposed from adminLayout.pug
-class App extends Component {
+class Layout extends Component {
   render() {
     return (
       <div id="Wrapper">
@@ -52,28 +47,36 @@ class App extends Component {
                 </div>
               </li>
               <li>
-                <a>
+								<Link to='/'>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
-                    Tab One
+											Home
                   </span>
-                </a>
+								</Link>
               </li>
               <li>
-                <a>
+								<Link to='/tabone'>
+                  <i className='fa fa-plus' />
+                  <span className='nav-label'>
+											Tab One
+                  </span>
+								</Link>
+              </li>
+              <li>
+								<Link to='/tabtwo'>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
                     Tab Two
                   </span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a>
+								<Link to='/tabthree'>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
                     Tab Three
                   </span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -117,7 +120,7 @@ class App extends Component {
             </nav>
           </div>
           <div>
-            This is where content goes
+						{this.props.children}
           </div>
           <div className='footer'>
             <div className='pull-right'>
@@ -133,4 +136,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Layout;
