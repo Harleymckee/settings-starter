@@ -1,23 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
-import { Router } from 'react-router'
-
 import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import createHistory from 'history/createBrowserHistory';
-import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
-import { Route, Switch, withRouter } from 'react-router'
-
-import { connect } from 'react-redux';
+import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
 import * as reducers from './reducers'
 import Layout from './components/Layout'
-
-import Home from './containers/Home'
-import TabThree from './containers/TabThree'
-import TabTwo from './containers/TabTwo'
-import TabOne from './containers/TabOne'
-
+import Routes from './routes'
 
 // TODO: clean this up
 import './index.css';
@@ -43,31 +33,11 @@ const store = createStore(
   applyMiddleware(middleware)
 )
 
-// move to components?
-const ConnectedSwitch = connect(state => ({
-	location: state.location
-}))(Switch);
-
-const Routes = () => {
-	return (
-		<ConnectedSwitch>
-			<Route exact path="/" component={Home} />
-			<Route path="/tabone" component={TabOne} />
-			<Route path="/tabtwo" component={TabTwo} />
-			<Route path="/tabthree" component={TabThree} />
-		</ConnectedSwitch>
-	)
-}
-
-const ConnectedRoutes = withRouter(connect(state => ({
-	location: state.location,
-}))(Routes));
-
 ReactDOM.render(
 	<Provider store={store}>
 		<ConnectedRouter history={history}>
 			<Layout>
-				<ConnectedRoutes />
+				<Routes />
 			</Layout>
 		</ConnectedRouter>
 	</Provider>

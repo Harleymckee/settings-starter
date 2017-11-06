@@ -47,6 +47,14 @@ class Layout extends Component {
                 </div>
               </li>
               <li>
+								<Link to='/'>
+                  <i className='fa fa-plus' />
+                  <span className='nav-label'>
+											Home
+                  </span>
+								</Link>
+              </li>
+              <li>
 								<Link to='/tabone'>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
