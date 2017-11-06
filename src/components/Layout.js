@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import logo from './autofi-logo-retro-w-200.png';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
-import '../node_modules/font-awesome/css/font-awesome.min.css'; 
-import './animate.css'; 
-import './admin-style.css';
-import './App.css';
+import logo from '../autofi-logo-retro-w-200.png';
+import { connect } from 'react-redux';
 
-// JSX transposed from adminLayout.pug
-class App extends Component {
+class Layout extends Component {
   render() {
     return (
       <div id="Wrapper">
@@ -52,15 +46,23 @@ class App extends Component {
                 </div>
               </li>
               <li>
-                <a>
+								<a href='/'>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
-                    Tab One
+											Home
                   </span>
-                </a>
+								</a>
               </li>
               <li>
-                <a>
+								<a href='/tabone'>
+                  <i className='fa fa-plus' />
+                  <span className='nav-label'>
+											Tab One
+                  </span>
+								</a>
+              </li>
+              <li>
+								<a href='/tabtwo'>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
                     Tab Two
@@ -68,7 +70,7 @@ class App extends Component {
                 </a>
               </li>
               <li>
-                <a>
+								<a href='/tabthree'>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
                     Tab Three
@@ -86,7 +88,7 @@ class App extends Component {
                   <i className='fa fa-bars fa-nomargin' />
                 </a>
               </div>
-              <ul className='nav navbar-top-links navbar-right'>
+              <ul className='nav navbar-top-as navbar-right'>
                 <li>
                   <span className='m-r-sm text-muted'>
                     Autofi
@@ -97,7 +99,7 @@ class App extends Component {
                     <i className='fa fa-bell' />
                   </a>
                   <ul className='dropdown-menu dropdown-alerts'>
-                    <li className='text-center link-block'>
+                    <li className='text-center a-block'>
                       <a href='#'>
                         <strong>
                           See All Alerts
@@ -117,7 +119,7 @@ class App extends Component {
             </nav>
           </div>
           <div>
-            This is where content goes
+						{this.props.children}
           </div>
           <div className='footer'>
             <div className='pull-right'>
@@ -133,4 +135,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Layout;
