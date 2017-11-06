@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-import logo from '../autofi-logo-retro-w-200.png';
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux';
+import logo from './autofi-logo-retro-w-200.png';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
+import '../node_modules/font-awesome/css/font-awesome.min.css'; 
+import './animate.css'; 
+import './admin-style.css';
+import './App.css';
 
-class Layout extends Component {
+// JSX transposed from adminLayout.pug
+class App extends Component {
   render() {
     return (
       <div id="Wrapper">
@@ -47,36 +52,28 @@ class Layout extends Component {
                 </div>
               </li>
               <li>
-								<Link to='/'>
+                <a>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
-											Home
+                    Tab One
                   </span>
-								</Link>
+                </a>
               </li>
               <li>
-								<Link to='/tabone'>
-                  <i className='fa fa-plus' />
-                  <span className='nav-label'>
-											Tab One
-                  </span>
-								</Link>
-              </li>
-              <li>
-								<Link to='/tabtwo'>
+                <a>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
                     Tab Two
                   </span>
-                </Link>
+                </a>
               </li>
               <li>
-								<Link to='/tabthree'>
+                <a>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
                     Tab Three
                   </span>
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -120,7 +117,7 @@ class Layout extends Component {
             </nav>
           </div>
           <div>
-						{this.props.children}
+            This is where content goes
           </div>
           <div className='footer'>
             <div className='pull-right'>
@@ -136,4 +133,4 @@ class Layout extends Component {
   }
 }
 
-export default Layout;
+export default App;
