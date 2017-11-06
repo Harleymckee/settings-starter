@@ -266,7 +266,6 @@ module.exports = {
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    // TODO: add to prod
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
