@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import logo from '../autofi-logo-retro-w-200.png';
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
 class Layout extends Component {
@@ -47,36 +46,36 @@ class Layout extends Component {
                 </div>
               </li>
               <li>
-								<Link to='/'>
+								<a href='/'>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
 											Home
                   </span>
-								</Link>
+								</a>
               </li>
               <li>
-								<Link to='/tabone'>
+								<a href='/tabone'>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
 											Tab One
                   </span>
-								</Link>
+								</a>
               </li>
               <li>
-								<Link to='/tabtwo'>
+								<a href='/tabtwo'>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
                     Tab Two
                   </span>
-                </Link>
+                </a>
               </li>
               <li>
-								<Link to='/tabthree'>
+								<a href='/tabthree'>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
                     Tab Three
                   </span>
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -89,7 +88,7 @@ class Layout extends Component {
                   <i className='fa fa-bars fa-nomargin' />
                 </a>
               </div>
-              <ul className='nav navbar-top-links navbar-right'>
+              <ul className='nav navbar-top-as navbar-right'>
                 <li>
                   <span className='m-r-sm text-muted'>
                     Autofi
@@ -100,7 +99,7 @@ class Layout extends Component {
                     <i className='fa fa-bell' />
                   </a>
                   <ul className='dropdown-menu dropdown-alerts'>
-                    <li className='text-center link-block'>
+                    <li className='text-center a-block'>
                       <a href='#'>
                         <strong>
                           See All Alerts
