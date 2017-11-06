@@ -7,10 +7,16 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
+import { Route, Switch, withRouter } from 'react-router'
 
 import { connect } from 'react-redux';
 import * as reducers from './reducers'
-import Root from './containers/Root'
+import Layout from './components/Layout'
+
+import Home from './containers/Home'
+import TabThree from './containers/TabThree'
+import TabTwo from './containers/TabTwo'
+import TabOne from './containers/TabOne'
 
 
 // TODO: clean this up
@@ -37,12 +43,32 @@ const store = createStore(
   applyMiddleware(middleware)
 )
 
-// <ConnectedRouter history={history}>
+// move to components?
+const ConnectedSwitch = connect(state => ({
+	location: state.location
+}))(Switch);
+
+const Routes = () => {
+	return (
+		<ConnectedSwitch>
+			<Route exact path="/" component={Home} />
+			<Route path="/tabone" component={TabOne} />
+			<Route path="/tabtwo" component={TabTwo} />
+			<Route path="/tabthree" component={TabThree} />
+		</ConnectedSwitch>
+	)
+}
+
+const ConnectedRoutes = withRouter(connect(state => ({
+	location: state.location,
+}))(Routes));
 
 ReactDOM.render(
 	<Provider store={store}>
 		<ConnectedRouter history={history}>
-			<Root />
+			<Layout>
+				<ConnectedRoutes />
+			</Layout>
 		</ConnectedRouter>
 	</Provider>
 	, document.getElementById('root')

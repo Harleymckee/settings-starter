@@ -1,23 +1,9 @@
 import React, { Component } from 'react';
 import logo from '../autofi-logo-retro-w-200.png';
-import { Route, Switch, withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
-import Home from './Home'
-import TabThree from './TabThree'
-import TabTwo from './TabTwo'
-import TabOne from './TabOne'
 
-import { Route, Switch, withRouter } from 'react-router'
-
-
-// move to components?
-const ConnectedSwitch = connect(state => ({
-	location: state.location
-}))(Switch);
-
-// Layout
-class RootContainer extends Component {
+class Layout extends Component {
   render() {
     return (
       <div id="Wrapper">
@@ -126,12 +112,7 @@ class RootContainer extends Component {
             </nav>
           </div>
           <div>
-						<ConnectedSwitch>
-							<Route exact path="/" component={Home} />
-							<Route path="/tabone" component={TabOne} />
-							<Route path="/tabtwo" component={TabTwo} />
-							<Route path="/tabthree" component={TabThree} />
-						</ConnectedSwitch>
+						{this.props.children}
           </div>
           <div className='footer'>
             <div className='pull-right'>
@@ -147,8 +128,4 @@ class RootContainer extends Component {
   }
 }
 
-const Root = withRouter(connect(state => ({
-	location: state.location,
-}))(RootContainer))
-
-export default Root;
+export default Layout;
