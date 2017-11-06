@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import logo from '../autofi-logo-retro-w-200.png';
-import { Route, Link } from 'react-router-dom'
+import { Route, Switch, Link } from 'react-router-dom'
 import Home from './Home'
 import TabThree from './TabThree'
 import TabTwo from './TabTwo'
 import TabOne from './TabOne'
 
 
+// Layout
 class App extends Component {
   render() {
     return (
@@ -116,10 +117,12 @@ class App extends Component {
             </nav>
           </div>
           <div>
-						<Route path="/" component={Home} />
-						<Route path="/tabone" component={TabOne} />
-						<Route path="/tabtwo" component={TabTwo} />
-						<Route path="/tabthree" component={TabThree} />
+						<Switch>
+							<Route exact path="/" component={Home} />
+							<Route exact path="/tabone" component={TabOne} />
+							<Route exact path="/tabtwo" component={TabTwo} />
+							<Route exact path="/tabthree" component={TabThree} />
+						</Switch>
           </div>
           <div className='footer'>
             <div className='pull-right'>

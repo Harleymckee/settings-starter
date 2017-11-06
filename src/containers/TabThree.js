@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// TODO: rename
 class TabThree extends Component {
 	render() {
 		return (
