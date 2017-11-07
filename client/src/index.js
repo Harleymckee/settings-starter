@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
@@ -21,12 +23,25 @@ const store = createStore(
   }),
 )
 
+const _path = path;
+
+const content = {
+		'/': 'Home',
+		'/tabone': 'TabOne',
+		'/tabtwo': 'TabTwo',
+		'/tabthree': 'TabThree',
+}
+
+const Content = content[_path];
+debugger
 ReactDOM.render(
 	<Provider store={store}>
 		<Layout>
-			<Home />
+			<Content />
 		</Layout>
 	</Provider>
 	, document.getElementById('root')
 	);
 registerServiceWorker();
+
+/* eslint-enable */
