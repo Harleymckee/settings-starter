@@ -10,8 +10,14 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+app.set('view engine', 'pug')
+
+app.get('/', function (req, res) {
+  res.render('index')
+})
+
 app.get('/login', function (req, res) {
-  res.send('hello world')
+  res.render('login')
 })
 
 app.listen(app.get("port"), () => {
