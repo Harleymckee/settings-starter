@@ -103,5 +103,9 @@
     "resolve-url-loader": "^2.2.0",
     "stylus-loader": "^3.0.1"
   },
-  "proxy": "http://localhost:3005/"
+  "proxy": {
+    "/": {
+      "target": "http://localhost:3005"
+    }
+  }
 }

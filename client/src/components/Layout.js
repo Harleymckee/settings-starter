@@ -46,7 +46,7 @@ class Layout extends Component {
                 </div>
               </li>
               <li>
-								<a href='/'>
+								<a href='/login'>
                   <i className='fa fa-plus' />
                   <span className='nav-label'>
 											Home
