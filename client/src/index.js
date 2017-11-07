@@ -1,3 +1,6 @@
+// TODO get rid of this and just ignore oneline with global
+/* eslint-disable */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
@@ -6,6 +9,9 @@ import { createStore, combineReducers } from 'redux'
 import * as reducers from './reducers'
 import Layout from './components/Layout'
 import Home from './containers/Home'
+import TabOne from './containers/TabOne'
+import TabTwo from './containers/TabTwo'
+import TabThree from './containers/TabThree'
 
 // TODO: clean this up
 import './index.css';
@@ -21,12 +27,31 @@ const store = createStore(
   }),
 )
 
+// TODO: this is weird
+let _path;
+if (typeof path !== 'undefined') {
+	_path = path;
+} else {
+	_path = '/'
+}
+
+const content = {
+		'/': Home,
+		'/tabone': TabOne,
+		'/tabtwo': TabTwo,
+		'/tabthree': TabThree,
+}
+
+const Content = content[_path];
+
 ReactDOM.render(
 	<Provider store={store}>
 		<Layout>
-			<Home />
+			<Content />
 		</Layout>
 	</Provider>
 	, document.getElementById('root')
 	);
 registerServiceWorker();
+
+/* eslint-enable */
